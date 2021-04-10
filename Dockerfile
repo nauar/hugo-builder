@@ -1,5 +1,7 @@
-FROM gcr.io/distroless/static:nonroot AS BUILDER
+FROM gcr.io/distroless/cc:latest
 
-ADD ./hugo /bin
+ADD ./hugo /bin/hugo
 
+WORKDIR /app
 
+CMD ["/bin/hugo"]
