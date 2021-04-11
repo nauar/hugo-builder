@@ -4,4 +4,4 @@ ADD ./hugo /bin/hugo
 
 WORKDIR /app
 
-CMD ["/bin/hugo"]
+ENTRYPOINT ["/bin/hugo"]
