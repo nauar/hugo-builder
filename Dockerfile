@@ -1,7 +1,8 @@
-FROM gcr.io/distroless/cc:latest
+FROM gcr.io/distroless/static:nonroot
 
-ADD ./hugo /bin/hugo
+ADD ./hugo /bin
 
 WORKDIR /app
 
-ENTRYPOINT ["/bin/hugo"]
+ENTRYPOINT [ "/bin/hugo" ]
+

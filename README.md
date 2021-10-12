@@ -4,7 +4,7 @@ This project generates a [distroless](https://github.com/GoogleContainerTools/di
 
 ## How to build it
 
-Simply execute `./build.bash <version>` where `version` is the tag of the image.
+Simply execute `./build.bash`. It will build the image with the latest `hugo` version.
 
 ## Usage
 

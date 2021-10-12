@@ -6,12 +6,11 @@ function log() {
 }
 
 function getHugo() {
-    curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | \
+    curl -sLO $(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | \
     grep "browser_download_url.*tar.gz" | \
     grep extended | \
     grep Linux-64bit | \
-    cut -d '"' -f 4 | \
-    wget -qi -
+    cut -d '"' -f 4)
 
     tarFile=$(ls -1 | grep hugo | grep '\.tar\.gz')
     tar xfvz $tarFile hugo
@@ -19,7 +18,7 @@ function getHugo() {
 }
 
 function buildImage() {
-    docker build -t nauar/hugo-builder:$1 .
+    docker build -t nauar/hugo-builder:latest .
     rm hugo
 }
 
