@@ -26,7 +26,7 @@ docker run --rm -v ${PWD}:/app nauar/hugo-builder server
 You can even emulate that you have `hugo` in your system:
 
 ```
-alias hugo="docker run --rm -v ${PWD}:/app nauar/hugo-builder"
+alias hugo="docker run --rm -p 1313:1313 -v ${PWD}:/app nauar/hugo-builder"
 hugo --help
-hugo server
+hugo server --bind=0.0.0.0 # in recent versions only binds to 127.0.0.1 and it does not work with docker
 ```
