@@ -1,8 +1,10 @@
-FROM gcr.io/distroless/cc:nonroot
+FROM gcr.io/distroless/cc
 
-ADD ./hugo /bin
+COPY ./hugo /bin
 
 WORKDIR /app
+
+EXPOSE 1313
 
 ENTRYPOINT [ "/bin/hugo" ]
 
